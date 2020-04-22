@@ -54,7 +54,7 @@ export default function EventPlanner() {
   };
 
   return (
-    <Container isOpen={isOpen} hasBgImage={true}>
+    <Container isOpen={isOpen} hasBgImage={hasBgImage}>
       <Wrapper>
         <Header onClick={toggle}>
           <span>Event Planner</span>
