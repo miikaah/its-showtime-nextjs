@@ -1,5 +1,6 @@
 import Head from "next/head";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
+import CurrentTimeClock from "../components/CurrentTimeClock";
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -10,6 +11,9 @@ const GlobalStyle = createGlobalStyle`
     --color-base-dark: #001414;
     --color-highlight: #ff0303;
     --color-highlight2: #ffab03;
+
+    --font-family-primary: Arial Black;
+    --font-family-secondary: Garamond;
   }
 
   html, body {
@@ -19,14 +23,14 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     background-image: linear-gradient(#093a3a, #001414);
+    color: var(--color-white);
     height: 100vh;
+    font-family: var(--font-family-primary);
   }
-`;
 
-const Text = styled.div`
-  background-color: ${({ hasBg }) =>
-    hasBg ? "var(--color-highlight2)" : "transparent"};
-  color: var(--color-white);
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 export default function Home() {
@@ -38,8 +42,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Text hasBg>Hello</Text>
-      <Text>World</Text>
+      <CurrentTimeClock />
     </>
   );
 }
