@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { createGlobalStyle } from "styled-components";
 import CurrentTimeClock from "../components/CurrentTimeClock";
+import EventPlanner from "../components/EventPlanner";
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     --color-highlight2: #ffab03;
 
     --font-family-primary: Arial Black;
-    --font-family-secondary: Garamond;
+    --font-family-secondary: Verdana;
   }
 
   html, body {
@@ -22,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    background-image: linear-gradient(#093a3a, #001414);
+    background-image: linear-gradient(#002020, #093a3a);
     color: var(--color-white);
     height: 100vh;
     font-family: var(--font-family-primary);
@@ -30,6 +31,16 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+  }
+
+  button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--color-white);
+    font-family: var(--font-family-secondary);
+    font-size: 16px;
   }
 `;
 
@@ -43,6 +54,7 @@ export default function Home() {
       </Head>
 
       <CurrentTimeClock />
+      <EventPlanner />
     </>
   );
 }
