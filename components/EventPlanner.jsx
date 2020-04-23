@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import EventList from "./EventList";
 
 const Container = styled.div`
   display: flex;
@@ -40,8 +41,8 @@ const Header = styled.div`
 `;
 
 export default function EventPlanner() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [hasBgImage, setHasBgImage] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
+  const [hasBgImage, setHasBgImage] = useState(true);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -60,6 +61,7 @@ export default function EventPlanner() {
           <span>Event Planner</span>
           <ToggleArrow isOpen={isOpen} />
         </Header>
+        <EventList />
       </Wrapper>
     </Container>
   );

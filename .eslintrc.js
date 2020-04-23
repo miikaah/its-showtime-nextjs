@@ -1,5 +1,6 @@
 module.exports = {
   env: {
+    browser: true,
     node: true,
     es6: true,
   },
@@ -10,5 +11,6 @@ module.exports = {
   },
   rules: {
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
   },
 };
