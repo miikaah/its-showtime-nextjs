@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
 import EventList from "./EventList";
 
@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const Header = styled.div`
+const ToggleButton = styled.button`
   align-self: center;
   color: var(--color-highlight2);
   padding: 12px 16px;
@@ -43,8 +43,10 @@ const Header = styled.div`
 export default function EventPlanner() {
   const [isOpen, setIsOpen] = useState(true);
   const [hasBgImage, setHasBgImage] = useState(true);
+  const toggleRef = useRef();
 
   const toggle = () => {
+    setTimeout(() => toggleRef.current.blur(), 500);
     setIsOpen(!isOpen);
 
     if (hasBgImage) {
@@ -57,11 +59,11 @@ export default function EventPlanner() {
   return (
     <Container isOpen={isOpen} hasBgImage={hasBgImage}>
       <Wrapper>
-        <Header onClick={toggle}>
+        <ToggleButton ref={toggleRef} onClick={toggle}>
           <span>Event Planner</span>
           <ToggleArrow isOpen={isOpen} />
-        </Header>
-        <EventList />
+        </ToggleButton>
+        {isOpen && <EventList />}
       </Wrapper>
     </Container>
   );
