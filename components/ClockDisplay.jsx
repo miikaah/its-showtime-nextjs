@@ -21,9 +21,7 @@ const StaticClockContainer = styled.div`
   padding: 0 10%;
 `;
 
-const CurrentEventName = styled.div`
-  padding: 32px;
-`;
+const CurrentEventName = styled.div``;
 
 export default function ClockDisplay() {
   const [{ events }] = useStateValue();

@@ -6,10 +6,9 @@ import { getCurrentEvent, getNextEvent } from "../reducers/events.reducer";
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 33vh;
-  padding-top: 54px;
-  font-size: 100px;
+  align-items: center;
+  height: 50vh;
+  font-size: 220px;
   color: ${({ hasCurrentEvent }) =>
     hasCurrentEvent && "var(--color-highlight)"};
 `;
