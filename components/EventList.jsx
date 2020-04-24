@@ -1,7 +1,9 @@
+import dynamic from "next/dynamic";
 import styled from "styled-components";
 import { useStateValue } from "./StateProvider";
-import EventRow from "./EventRow";
 import EventAddButton from "./EventAddButton";
+
+const EventRow = dynamic(() => import("./EventRow"));
 
 const Container = styled.div`
   display: flex;
@@ -15,13 +17,10 @@ const Container = styled.div`
 export default function EventList() {
   const [{ events }] = useStateValue();
 
-  if (!events) return null;
-
   return (
     <Container>
-      {events.map((event) => (
-        <EventRow key={event.id} event={event} />
-      ))}
+      {Array.isArray(events) &&
+        events.map((event) => <EventRow key={event.id} event={event} />)}
       <EventAddButton />
     </Container>
   );
