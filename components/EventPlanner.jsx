@@ -41,8 +41,8 @@ const ToggleButton = styled.button`
 `;
 
 export default function EventPlanner() {
-  const [isOpen, setIsOpen] = useState(true);
-  const [hasBgImage, setHasBgImage] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [hasBgImage, setHasBgImage] = useState(false);
   const toggleRef = useRef();
 
   const toggle = () => {

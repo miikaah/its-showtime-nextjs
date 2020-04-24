@@ -23,3 +23,23 @@ export const eventsReducer = (events = [], action) => {
       return events;
   }
 };
+
+const isCurrentEvent = (event) => {
+  const now = new Date().getTime();
+  return event.startDate.getTime() <= now && event.endDate.getTime() >= now;
+};
+
+export const getCurrentEvent = (events) => {
+  if (!Array.isArray(events)) return;
+  return events.find(isCurrentEvent);
+};
+
+const isUpcomingEvent = (event) => {
+  const now = new Date().getTime();
+  return event.startDate.getTime() > now;
+};
+
+export const getNextEvent = (events) => {
+  if (!Array.isArray(events)) return;
+  return events.find(isUpcomingEvent);
+};

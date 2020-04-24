@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import { createGlobalStyle } from "styled-components";
 import CurrentTimeClock from "../components/CurrentTimeClock";
@@ -5,6 +6,10 @@ import EventPlanner from "../components/EventPlanner";
 import StateProvider, {
   LocalStoragePersistor,
 } from "../components/StateProvider";
+
+const ClockDisplay = dynamic(() => import("../components/ClockDisplay"), {
+  ssr: false,
+});
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -62,6 +67,7 @@ export default function App() {
       </Head>
 
       <CurrentTimeClock />
+      <ClockDisplay />
       <EventPlanner />
     </StateProvider>
   );

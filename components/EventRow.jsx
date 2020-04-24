@@ -49,7 +49,7 @@ export default function EventRow({ event }) {
     setHasStartDateErr(false);
     const dateString = e.target.value;
     setStartDate(dateString);
-    const date = parseDate(dateString);
+    const date = parseDate(dateString, "start");
     if (date.toString() === "Invalid Date") {
       setHasStartDateErr(true);
       return;
@@ -61,7 +61,7 @@ export default function EventRow({ event }) {
     setHasEndDateErr(false);
     const dateString = e.target.value;
     setEndDate(dateString);
-    const date = parseDate(dateString);
+    const date = parseDate(dateString, "end");
     if (date.toString() === "Invalid Date") {
       setHasEndDateErr(true);
       return;
