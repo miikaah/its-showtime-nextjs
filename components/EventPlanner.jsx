@@ -26,6 +26,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  overflow: auto;
+  padding-bottom: 60px;
 `;
 
 const ToggleButton = styled.button`
