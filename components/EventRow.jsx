@@ -23,8 +23,8 @@ const Input = styled.input`
   margin-bottom: 8px;
   text-align: center;
   text-overflow: ellipsis;
-  ${({ hasStartDateErr, hasEndDateErr }) =>
-    (hasStartDateErr || hasEndDateErr) &&
+  ${({ hasDateErr }) =>
+    hasDateErr &&
     `
     outline-color: var(--color-highlight);
   `}
@@ -91,13 +91,13 @@ export default function EventRow({ event }) {
         type="text"
         value={startDate}
         onChange={updateStartDate}
-        hasStartDateErr={hasStartDateErr}
+        hasDateErr={hasStartDateErr}
       />
       <Input
         type="text"
         value={endDate}
         onChange={updateEndDate}
-        hasEndDateErr={hasEndDateErr}
+        hasDateErr={hasEndDateErr}
       />
       <RemoveButton onClick={deleteEvent}>X</RemoveButton>
     </Container>
