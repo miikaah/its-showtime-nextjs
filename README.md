@@ -2,9 +2,12 @@
 
 It's Showtime is an event planner.
 
+### Peculiarities
+
+NextJS Hot Module Reload caches Local Storage for some reason. Refresh the page after modifying events.
+
 ## TODO:
 
-- Add 'No Upcoming Events' notification
 - Add transition for Event Planner inputs
 - Add system datetime picker
 - Scroll to input in Event Planner in mobile

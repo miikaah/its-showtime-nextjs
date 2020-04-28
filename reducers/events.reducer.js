@@ -43,3 +43,6 @@ export const getNextEvent = (events) => {
   if (!Array.isArray(events)) return;
   return events.find(isUpcomingEvent);
 };
+
+export const getHasEvents = (events) =>
+  Array.isArray(events) && events.length > 0;

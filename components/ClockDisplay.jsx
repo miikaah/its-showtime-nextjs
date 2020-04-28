@@ -4,7 +4,11 @@ import { up } from "styled-breakpoints";
 import ShowtimeCounterClock from "./ShowtimeCounterClock";
 import StaticTimeClock from "./StaticTimeClock";
 import { useStateValue } from "./StateProvider";
-import { getCurrentEvent, getNextEvent } from "../reducers/events.reducer";
+import {
+  getCurrentEvent,
+  getNextEvent,
+  getHasEvents,
+} from "../reducers/events.reducer";
 
 const Container = styled.div`
   display: flex;
@@ -34,10 +38,21 @@ const CurrentEventName = styled.div`
   font-size: 30px;
 `;
 
+const NoEventsNote = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: var(--font-family-secondary);
+`;
+
 export default function ClockDisplay() {
   const [{ events }] = useStateValue();
   const currentEvent = getCurrentEvent(events);
   const nextEvent = getNextEvent(events);
+  const hasEvents = getHasEvents(events);
   const [event, setEvent] = useState(currentEvent || nextEvent);
 
   useEffect(() => {
@@ -50,14 +65,19 @@ export default function ClockDisplay() {
   }, [events]);
 
   return (
-    <Container>
-      <CurrentEventName>{event && event.name}</CurrentEventName>
-      <StaticClockContainer>
-        <StaticTimeClock event={event} type="startDate" />
-        <StaticClockDivider>{"\u2013"}</StaticClockDivider>
-        <StaticTimeClock event={event} type="endDate" />
-      </StaticClockContainer>
-      <ShowtimeCounterClock />
-    </Container>
+    <>
+      {hasEvents && (
+        <Container>
+          <CurrentEventName>{event && event.name}</CurrentEventName>
+          <StaticClockContainer>
+            <StaticTimeClock event={event} type="startDate" />
+            <StaticClockDivider>{"\u2013"}</StaticClockDivider>
+            <StaticTimeClock event={event} type="endDate" />
+          </StaticClockContainer>
+          <ShowtimeCounterClock />
+        </Container>
+      )}
+      {!hasEvents && <NoEventsNote>No upcoming events</NoEventsNote>}
+    </>
   );
 }
