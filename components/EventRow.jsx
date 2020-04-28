@@ -14,7 +14,6 @@ const Input = styled.input`
   color: black;
   margin-right: 8px;
   text-align: center;
-  max-width: 14vw;
   ${({ hasStartDateErr, hasEndDateErr }) =>
     (hasStartDateErr || hasEndDateErr) &&
     `
@@ -23,8 +22,8 @@ const Input = styled.input`
 `;
 
 const RemoveButton = styled.button`
-  flex: 1 0 8%;
   background-color: var(--color-highlight);
+  min-width: 80px;
 `;
 
 export default function EventRow({ event }) {
