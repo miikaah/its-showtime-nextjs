@@ -73,6 +73,9 @@ export default function App() {
       <Head>
         <title>It&apos;s Showtime!</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ffab03" />
+        <meta name="description" content="It's Showtime is an Event planner" />
       </Head>
 
       <ThemeProvider theme={theme}>

@@ -1,0 +1,16 @@
+{
+  "name": "It's Showtime",
+  "short_name": "It's Showtime",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "48x48"
+    }
+  ],
+  "background_color": "#002525",
+  "description": "PWA for It's Showtime for offline support",
+  "display": "fullscreen",
+  "start_url": "/",
+  "theme_color": "#fbfbfb"
+}
