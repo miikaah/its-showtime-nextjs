@@ -13,15 +13,20 @@ const Container = styled.div`
   height: 90vh;
 `;
 
-const ShowtimeClockContainer = styled.div``;
-
 const StaticClockContainer = styled.div`
   display: flex;
-  width: 100%;
-  padding: 0 10%;
+  padding: 12px;
+  align-items: center;
+  font-size: 14px;
 `;
 
-const CurrentEventName = styled.div``;
+const StaticClockDivider = styled.span`
+  margin: 0 8px;
+`;
+
+const CurrentEventName = styled.div`
+  font-size: 30px;
+`;
 
 export default function ClockDisplay() {
   const [{ events }] = useStateValue();
@@ -41,13 +46,12 @@ export default function ClockDisplay() {
   return (
     <Container>
       <CurrentEventName>{event && event.name}</CurrentEventName>
-      <ShowtimeClockContainer>
-        <ShowtimeCounterClock />
-      </ShowtimeClockContainer>
       <StaticClockContainer>
         <StaticTimeClock event={event} type="startDate" />
+        <StaticClockDivider>{"\u2013"}</StaticClockDivider>
         <StaticTimeClock event={event} type="endDate" />
       </StaticClockContainer>
+      <ShowtimeCounterClock />
     </Container>
   );
 }

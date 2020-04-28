@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import CurrentTimeClock from "../components/CurrentTimeClock";
 import EventPlanner from "../components/EventPlanner";
 import StateProvider, {
@@ -56,6 +56,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const theme = {
+  breakpoints: {
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1300px",
+  },
+};
+
 export default function App() {
   return (
     <StateProvider>
@@ -66,9 +75,11 @@ export default function App() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <CurrentTimeClock />
-      <ClockDisplay />
-      <EventPlanner />
+      <ThemeProvider theme={theme}>
+        <CurrentTimeClock />
+        <ClockDisplay />
+        <EventPlanner />
+      </ThemeProvider>
     </StateProvider>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { up } from "styled-breakpoints";
 import { useStateValue } from "./StateProvider";
 import { getCurrentEvent, getNextEvent } from "../reducers/events.reducer";
 
@@ -7,10 +8,18 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  font-size: 220px;
+  height: 55vh;
+  text-align: center;
+  font-size: 100px;
   color: ${({ hasCurrentEvent }) =>
     hasCurrentEvent && "var(--color-highlight)"};
+
+  ${up("xl")} {
+    align-items: initial;
+    padding-top: 66px;
+    height: 52vh;
+    font-size: 200px;
+  }
 `;
 
 const getSecondsLeft = (currentEvent, nextEvent) => {
