@@ -8,9 +8,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 55vh;
+  padding-top: 30px;
   text-align: center;
-  font-size: 100px;
+  font-size: 95px;
   color: ${({ hasCurrentEvent }) =>
     hasCurrentEvent && "var(--color-highlight)"};
 

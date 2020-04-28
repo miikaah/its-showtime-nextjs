@@ -3,7 +3,7 @@ import { useStateValue } from "./StateProvider";
 import { addEvent } from "../reducers/events.reducer";
 
 const Button = styled.button`
-  background-color: var(--color-highlight2);
+  background-color: var(--color-primary);
   color: var(--color-black);
 `;
 

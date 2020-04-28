@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { up } from "styled-breakpoints";
 import ShowtimeCounterClock from "./ShowtimeCounterClock";
 import StaticTimeClock from "./StaticTimeClock";
 import { useStateValue } from "./StateProvider";
@@ -8,9 +9,14 @@ import { getCurrentEvent, getNextEvent } from "../reducers/events.reducer";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 90vh;
+  padding-top: 50px;
+
+  ${up("xl")} {
+    padding-top: 0;
+    justify-content: center;
+  }
 `;
 
 const StaticClockContainer = styled.div`
