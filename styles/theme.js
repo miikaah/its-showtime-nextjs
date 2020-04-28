@@ -61,5 +61,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     padding: 12px;
     border-radius: 3px;
+    border: 0;
   }
 `;

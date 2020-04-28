@@ -13,3 +13,5 @@ It's Showtime is an event planner.
 
 - DB for Events / gigs
 - Backend API for CRUD
+- Settings
+- i18n
