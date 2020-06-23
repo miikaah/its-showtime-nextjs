@@ -11,6 +11,7 @@ NextJS Hot Module Reload caches Local Storage for some reason. Refresh the page 
 - Add transition for Event Planner inputs
 - Add system datetime picker
 - Scroll to input in Event Planner in mobile
+- Validate that end date is after start date
 
 ## Nice-to-have
 
