@@ -1,21 +1,21 @@
 import { createGlobalStyle } from "styled-components";
 
 export const theme = {
-  breakpoints: {
-    sm: "576px",
-    md: "768px",
-    lg: "992px",
-    xl: "1300px",
-  },
-  colors: {
-    white: "#fbfbfb",
-    black: "#000",
-    base: "#002525",
-    baseLight: "#006666",
-    baseDark: "#002020",
-    highlight: "#ff0303",
-    primary: "#ffab03",
-  },
+    breakpoints: {
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1300px",
+    },
+    colors: {
+        white: "#fbfbfb",
+        black: "#000",
+        base: "#002525",
+        baseLight: "#006666",
+        baseDark: "#002020",
+        highlight: "#ff0303",
+        primary: "#ffab03",
+    },
 };
 
 export const GlobalStyle = createGlobalStyle`
