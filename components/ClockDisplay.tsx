@@ -61,7 +61,7 @@ const ClockDisplay: React.FunctionComponent = () => {
 
     return (
         <>
-            {hasEvents && (
+            {hasEvents && event && (
                 <Container>
                     <CurrentEventName>{event && event.name}</CurrentEventName>
                     <StaticClockContainer>
@@ -72,7 +72,7 @@ const ClockDisplay: React.FunctionComponent = () => {
                     <ShowtimeCounterClock />
                 </Container>
             )}
-            {!hasEvents && <NoEventsNote>No upcoming events</NoEventsNote>}
+            {(!hasEvents || !event) && <NoEventsNote>No upcoming events</NoEventsNote>}
         </>
     );
 };
